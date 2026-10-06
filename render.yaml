@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: floradise-sia-admin
+    runtime: docker
+    plan: free
+    branch: main
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DB_HOST
+        value: mysql-1c6d9e73-torredajairus63-e18c.l.aivencloud.com
+      - key: DB_USER
+        value: avnadmin
+      - key: DB_PASS
+        sync: false   # Set this manually in the Render dashboard
+      - key: DB_NAME
+        value: defaultdb
+      - key: DB_PORT
+        value: "11993"
